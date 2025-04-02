@@ -1,11 +1,14 @@
 ---
 title: "Lab 1 - Quarto Warmup & STAT 331 Review"
-author: "YOUR NAME HERE"
+author: "Matt Babb"
 format: html
 embed-resources: true
 editor: source
 execute: 
   echo: true
+  error: true
+  message: false
+  warning: false
 ---
 
 ```{r}
@@ -20,13 +23,15 @@ library(ggridges)
 First, let's make sure you know how to use Markdown formatting to style a Quarto
 document.
 
-1.  Make this text bold.
+1.  **Make this text bold.**
 
-2.  Make this text italicized.
+2.  *Make this text italicized.*
 
 3.  Make these into a bullet point list:
 
-Apples Bananas Potatoes
+- Apples
+- Bananas
+- Potatoes
 
 4.  Edit the YAML to remove warning messages from being output in the rendered
 HTML file
@@ -35,6 +40,9 @@ HTML file
 source code:
 
 ```{r}
+#| echo: false
+
+
 ggplot(data = mpg, 
        mapping = aes(y = manufacturer, x = hwy)) + 
   geom_boxplot() +
