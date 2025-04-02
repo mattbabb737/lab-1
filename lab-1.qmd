@@ -6,9 +6,8 @@ embed-resources: true
 editor: source
 execute: 
   echo: true
-  error: true
-  message: false
   warning: false
+  message: false
 ---
 
 ```{r}
@@ -41,7 +40,7 @@ source code:
 
 ```{r}
 #| echo: false
-
+#| label: how_to_hide_code_but_show_plot
 
 ggplot(data = mpg, 
        mapping = aes(y = manufacturer, x = hwy)) + 
@@ -56,6 +55,9 @@ ggplot(data = mpg,
 `geom_density_ridges()` chose to use:
 
 ```{r}
+#| warning: false
+#| label: how_to_remove_messages
+
 ggplot(data = mpg, 
        mapping = aes(y = manufacturer, x = hwy)) + 
   geom_density_ridges() +
@@ -69,6 +71,8 @@ ggplot(data = mpg,
 side-by-side:
 
 ```{r}
+#| layout-ncol: 2
+#| label: how_to_plot_side_by_side
 
 ggplot(data = mpg, 
        mapping = aes(y = manufacturer, x = hwy)) + 
@@ -92,6 +96,9 @@ ggplot(data = mpg,
 output:
 
 ```{r}
+#| results: "hide"
+#| label: how_to_hide_results
+
 2 + 2
 ```
 
@@ -99,6 +106,9 @@ output:
 this chunk has an error
 
 ```{r}
+#| error: true
+#| label: how_to_render_even_with_errors
+
 2 + a
 ```
 
