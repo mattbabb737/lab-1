@@ -134,7 +134,12 @@ two levels: `petrol` (any car using petrolium-based gas) and
 `alternative energy` (any car not using petrolium-based gas). 
 
 ```{r}
+#| label: using `if_else()` to create new variable `fuel_type`
 
+mpg <- mpg %>%
+  mutate(fuel_type = if_else(fl %in% c("p", "r"),
+                             "petrol",
+                             "alternative energy"))
 ```
 
 12. The `drv` variable describes if the car has front drive (`f`), rear drive
@@ -143,7 +148,14 @@ Specifically, use the `case_when()` function to change the `drv` varible to have
 the following levels: `front`, `rear`, `four wheel`. 
 
 ```{r}
+#| label: using `case_when()` to rename `drv` cats
 
+mpg <- mpg %>% 
+  mutate(drv_label = case_when(
+    drv == "f" ~ "front",
+    drv == "r" ~ "rear",
+    drv == "4" ~ "four wheel"
+  ))
 ```
 
 (string split + remove extra ")" )
@@ -156,7 +168,14 @@ of the `trans` column to `trans_style`.
 *Hint: You will need to deal with the stray parenthesis!* 
 
 ```{r}
+#| label: using `str_split()` to separate transmission styles and transmission types
 
+mpg <- mpg %>%
+  mutate(
+    trans_type = str_split (trans, pattern = "\\(", simplify = TRUE)[, 2],
+    trans_type = str_remove(trans_type, "\\)")
+  ) %>% 
+  rename(trans_style = trans)
 ```
 
 ## Getting to know your classmates
@@ -166,6 +185,45 @@ your experiences. Tell me their name and professor. List one or two things that
 you think you learned more about, and one or two things that they learned more
 about.
 
+**Name**  
+Visruth
+
+**Professor**  
+Dr. Rehnberg
+
+**Experience**  
+Visruth and I had remarkably similar STAT331 experiences, since most of the material was shared between our professors. However, we did enter into the class with different levels of experience with R. Visruth had taken multiple classes that used R before STAT331, and he was comfortable with Git prior to starting. I on the other hand had only used R in STAT313, and I had never used Git. I had merely heard legends. This reflects the apparent familiarity that other students in my classhad with Git as well.  
+
+Over the last year or two, he and I have also spent more time studying different aspects of programming. I seem to have spent more time learning about Shiny apps and wildly complicated plots (more on that as the quarter goes by), while he has spent more time focusing on object-oriented programming and modeling. He recently participated in Data Fest as well, which is a level of depth I aspire to reaching.
+
+
 15. Find someone in the class who **does not** share your birth month. Tell me
 their name and birthday, and use R to find out how many days apart your
 birthdays are.
+
+**Name**  
+Zach F.
+
+**Distance from my birthday (in a given year)**
+```{r}
+#| label: calculating birthday distances using lubridate_1
+
+mine_year <- ymd("2024-12-21")
+Zachs_year <- ymd("2024-08-30")
+
+days_apart_year <- abs(mine_year - Zachs_year)
+
+days_apart_year
+```
+
+**Distance from my birthday (total)**
+```{r}
+#| label: calculating birthday distances using lubridate_2
+
+mine_birth <- ymd("1992-12-21")
+Zachs_birth <- ymd("2001-08-30")
+
+days_apart_birth <- abs(as.numeric(Zachs_birth - mine_birth))
+
+cat("Zach and I were born", days_apart_birth, "days apart.\n")
+```
