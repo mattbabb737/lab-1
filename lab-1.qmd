@@ -139,7 +139,7 @@ two levels: `petrol` (any car using petrolium-based gas) and
 mpg <- mpg %>%
   mutate(fuel_type = if_else(fl %in% c("p", "r"),
                              "petrol",
-                             "alternative energy"))
+                             "alternative_energy"))
 ```
 
 12. The `drv` variable describes if the car has front drive (`f`), rear drive
