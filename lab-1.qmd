@@ -144,7 +144,7 @@ mpg <- mpg %>%
 
 12. The `drv` variable describes if the car has front drive (`f`), rear drive
 (`r`), or four wheel drive (`4`). Let's make better labels for these values! 
-Specifically, use the `case_when()` function to change the `drv` varible to have
+Specifically, use the `case_when()` function to change the `drv` variable to have
 the following levels: `front`, `rear`, `four wheel`. 
 
 ```{r}
