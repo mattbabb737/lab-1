@@ -192,9 +192,9 @@ Visruth
 Dr. Rehnberg
 
 **Experience**  
-Visruth and I had remarkably similar STAT331 experiences, since most of the material was shared between our professors. However, we did enter into the class with different levels of experience with R. Visruth had taken multiple classes that used R before STAT331, and he was comfortable with Git prior to starting. I on the other hand had only used R in STAT313, and I had never used Git. I had merely heard legends. This reflects the apparent familiarity that other students in my classhad with Git as well.  
+Visruth and I had remarkably similar STAT331 experiences, since most of the material was shared between our professors. However, we did enter into the class with different levels of experience with R. Visruth had taken multiple classes that used R before STAT331, and he was comfortable with Git prior to starting. I on the other hand had only used R in STAT313, and I had never used Git. I had merely heard legends. This reflects the apparent familiarity that other students in my STAT331 class had with Git as well.  
 
-Over the last year or two, he and I have also spent more time studying different aspects of programming. I seem to have spent more time learning about Shiny apps and wildly complicated plots (more on that as the quarter goes by), while he has spent more time focusing on object-oriented programming and modeling. He recently participated in Data Fest as well, which is a level of depth I aspire to reaching.
+Over the last year or two, he and I have also spent more time studying different aspects of programming. I seem to have spent more time learning about Shiny apps and wildly complicated plots (more on that as the quarter goes by), while he has spent more time focusing on object-oriented programming and modeling. He recently participated in Data Fest as well, which is a level of depth I aspire to reach.
 
 
 15. Find someone in the class who **does not** share your birth month. Tell me
